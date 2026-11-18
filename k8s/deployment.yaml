@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+  labels:
+    app: web
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: hello-app
+          image: balajiaiagent/hello-app:v1
+          ports:
+            - containerPort: 5000
+          readinessProbe:          # "Is the app ready to receive visitors?"
+            httpGet:
+              path: /health
+              port: 5000
+          livenessProbe:           # "Is the app still alive? If not, restart it."
+            httpGet:
+              path: /health
+              port: 5000

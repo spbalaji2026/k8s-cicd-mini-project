@@ -1,0 +1,12 @@
+# Python virtual environment (each person creates their own)
+.venv/
+__pycache__/
+*.pyc
+
+# Personal working files
+session-log.txt
+~$*
+~WRL*.tmp
+
+# Word documents (guide drafts stay on the laptop)
+*.docx
