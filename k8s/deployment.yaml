@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: hello-app
-          image: balajiaiagent/hello-app:v1
+          image: balajiaiagent/hello-app:3b1d417
           ports:
             - containerPort: 5000
           readinessProbe:          # "Is the app ready to receive visitors?"
